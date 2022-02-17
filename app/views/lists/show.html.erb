@@ -1,7 +1,14 @@
+<div class="container">
 <%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
 
 <ul class="list-group">
   <% @list.movies.each do |movie| %>
+  <div class="container">
     <li><%= movie.title %></li>
+  </div>
   <% end %>
 </ul>
+
+<%= link_to 'Return to list homepage', lists_path(@list) %>
+
+</div>
