@@ -1,6 +1,9 @@
 <div class="container">
 <%= link_to 'Add a movie', new_list_bookmark_path(@list) %>
 
+
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+
 <ul class="list-group">
   <% @list.movies.each do |movie| %>
   <div class="container">
