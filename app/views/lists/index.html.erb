@@ -1,15 +1,12 @@
 <div class="container">
-
 <% @lists.each do |list| %>
+<div class="container">
 <h3><%= link_to list.name, list_path(list) %></h3>
+<% if list.photo.key %>
+<%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+</div>
 <% end %>
 
 <%= link_to 'Create new list', new_list_path %>
 </div>
-
-<%= cl_image_tag("https://res.cloudinary.com/dhicyzopj/image/upload/v1645195609/hbyjxoj56uyznxgm64l2.jpg",
-      width: 400, height: 300, crop: :fill) %>
-
-<!-- for face detection -->
-<%= cl_image_tag("https://res.cloudinary.com/dhicyzopj/image/upload/v1645195610/diwbjvfvhm0vfsdlmsax.jpg",
-      width: 150, height: 150, crop: :thumb, gravity: :face) %>
