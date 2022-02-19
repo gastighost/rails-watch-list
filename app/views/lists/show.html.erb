@@ -5,13 +5,12 @@
 <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
 
-<ul class="list-group">
-  <% @list.movies.each do |movie| %>
-  <div class="container">
-    <li><%= movie.title %></li>
-  </div>
+<div class="container">
+  <% @list.bookmarks.each do |bookmark| %>
+    <h4><%= bookmark.movie.title %></h4>
+    <p><%= bookmark.comment %></p>
   <% end %>
-</ul>
+</div>
 
 <%= link_to 'Return to list homepage', root_path %>
 
